@@ -1,60 +1,62 @@
-    
-    const registerForm = document.getElementById('registerForm');
-    const loginFormContainer = document.getElementById('loginFormContainer');
-    const showLoginForm = document.getElementById('showLoginForm');
-    const showRegisterForm = document.getElementById('showRegisterForm');
+// Function to handle login form submission
+function handleLogin(event) {
+  event.preventDefault();
 
-    // Show login form
-    showLoginForm.addEventListener('click', function(event) {
-        event.preventDefault();
-        loginFormContainer.classList.remove('hidden');
-    });
+  // Get form data
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-    // Show register form
-    showRegisterForm.addEventListener('click', function(event) {
-        event.preventDefault();
-        loginFormContainer.classList.add('hidden');
-    });
-        
-    // Register form submit event
-    registerForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const regUsername = document.getElementById('regUsername').value;
-        const regPassword = document.getElementById('regPassword').value;
-        
-        // Retrieve users from localStorage or initialize empty array
-        const users = JSON.parse(localStorage.getItem('users')) || [];
+  // You may want to perform validation here
 
-        // Check if username already exists
-        if (users.some(user => user.username === regUsername)) {
-            alert('Username already exists');
-            return;
-        }
+  // Store credentials in localStorage
+  localStorage.setItem('username', username);
+  localStorage.setItem('password', password);
 
-        // Add new user to the list
-        users.push({ username: regUsername, password: regPassword });
+  // Redirect or perform further actions
+  console.log('Login successful!');
+}
 
-        // Update users in localStorage
-        localStorage.setItem('users', JSON.stringify(users));
+// Function to handle registration form submission
+function handleRegister(event) {
+  event.preventDefault();
 
-        alert('Registration successful! Please login.');
-        loginFormContainer.classList.remove('hidden'); // Show login form after registration
-    });
-        
-    // Login form submit event
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        
-        // Check if user exists in localStorage
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const user = users.find(u => u.username === username && u.password === password);
+  // Get form data
+  const newUsername = document.getElementById('newUsername').value;
+  const newPassword = document.getElementById('newPassword').value;
 
-        if (user) {
-            alert('Login successful!');
-            // Redirect or do something else after successful login
-        } else {
-            alert('Invalid username or password');
-        }
-    });
+  // You may want to perform validation here
+
+  // Store credentials in localStorage
+  localStorage.setItem('username', newUsername);
+  localStorage.setItem('password', newPassword);
+
+  // Redirect or perform further actions
+  console.log('Registration successful!');
+}
+
+// Function to switch between login and registration forms
+function toggleForms() {
+  const loginFormContainer = document.getElementById('loginForm').parentNode;
+  const registerFormContainer = document.getElementById('registerFormContainer');
+
+  loginFormContainer.classList.toggle('hidden');
+  registerFormContainer.classList.toggle('hidden');
+}
+
+// Add submit event listeners to the forms
+document.getElementById('loginForm').addEventListener('submit', handleLogin);
+document.getElementById('registerForm').addEventListener('submit', handleRegister);
+
+// Add click event listeners to toggle between forms
+document.getElementById('showRegister').addEventListener('click', toggleForms);
+document.getElementById('showLogin').addEventListener('click', toggleForms);
+
+// Check if user is already logged in
+window.onload = function() {
+  const storedUsername = localStorage.getItem('username');
+  const storedPassword = localStorage.getItem('password');
+  if (storedUsername && storedPassword) {
+    // Redirect or perform further actions for already logged in user
+    console.log('Welcome back, ' + storedUsername + '!');
+  }
+};

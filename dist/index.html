@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration and Login Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./output.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration and Login Form</title>
+  <link rel="stylesheet" href="./output.css">
 </head>
+
 <body>
-    <!-- main page -->
 
-    <div>
-        <!-- 50% Left -->
-    
-            <div class="flex items-center justify-center h-screen">
-                <div class="max-w-md w-full bg-blue-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="px-6 py-8">
-                        <h2 class="text-2xl font-semibold text-gray-700 text-center">Register</h2>
-                        <form id="registerForm" class="mt-8">
-                            <div>
-                                <label for="regUsername" class="block text-sm font-medium text-gray-700">Username</label>
-                                <input type="text" id="regUsername" name="regUsername" autocomplete="username" required 
-                                       class="mt-1 px-4 py-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </div>
-                            <div class="mt-4">
-                                <label for="regPassword" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="regPassword" name="regPassword" autocomplete="new-password" required 
-                                       class="mt-1 px-4 py-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            </div>
-                            <div class="mt-6">
-                                <button type="submit" class="px-4 py-3 w-full bg-indigo-600 text-white rounded-md">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="border-t border-gray-200 px-6 py-4">
-                        <p class="text-sm text-gray-700">Already have an account? <a href="#" id="showLoginForm" class="font-medium text-indigo-600 hover:text-indigo-500">Login here</a></p>
-                    </div>
+  <div>
+
+    <div class="relative">
+      <div class="flex lg:block bg-[#041643] h-screen w-full overflow-hidden">
+        <!-- Image container on the left -->
+        <img src="./alpha.png" alt="Your Image" class=" w-[100vw] h-[100-vh] relative bottom-10 opacity-40">
+      </div>
+      <div class="flex flex-col justify-center items-start  gap-40 absolute left-96 top-32">
+        <div class="flex justify-center items-center gap-2">
+              <div class="border-4 border-blue-600 rounded-full w-8 h-8 flex flex-col justify-center items-center">
+                <!-- <img src="./Vector.png" alt=""> -->
+                <div class="bg-blue-600 rounded-full w-5 h-5">
+
                 </div>
-            </div>
-        
-            <div id="loginFormContainer" class="hidden">
-                <div class="flex items-center justify-center h-screen">
-                    <div class="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="px-6 py-8">
-                            <h2 class="text-2xl font-semibold text-gray-700 text-center">Login</h2>
-                            <form id="loginForm" class="mt-8">
-                                <div>
-                                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                                    <input type="text" id="username" name="username" autocomplete="username" required 
-                                        class="mt-1 px-4 py-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                </div>
-                                <div class="mt-4">
-                                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                    <input type="password" id="password" name="password" autocomplete="current-password" required 
-                                        class="mt-1 px-4 py-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                </div>
-                                <div class="mt-6">
-                                    <button type="submit" class="px-4 py-3 w-full bg-indigo-600 text-white rounded-md">Login</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="border-t border-gray-200 px-6 py-4">
-                            <p class="text-sm text-gray-700">Don't have an account? <a href="#" id="showRegisterForm" class="font-medium text-indigo-600 hover:text-indigo-500">Register here</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <!-- 50% Right -->
-
-        <div>
-
+              </div>
+              <div>
+                <p class="text-white font-semibold">CIRCLES</p>
+              </div>
         </div>
+        <div class="flex flex-col justify-center items-center gap-5">
+          <p class="text-white text-4xl font-bold w-60">Login into your account</p>
+          <p class="text-gray-400 text-xl">Let us make the circle bigger</p>
+        </div>
+
+      </div>
+      <div class="absolute top-[30%] left-[50%] flex flex-col justify-center items-center ">
+
+        <!-- Right Side LoginForm -->
+        <div class="flex-1 p-4 lg:p-8 max-w-md  mb-10">
+
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex justify-between mb-8">
+              <h2 class="text-2xl font-bold">Login</h2>
+              <a href="#" id="showRegister" class="text-blue-500">Register</a>
+            </div>
+            <form id="loginForm" class="space-y-4">
+              <div>
+                <label for="username" class="block">Username</label>
+                <input type="text" id="username" name="username" class="w-full border rounded-md py-2 px-3" required>
+              </div>
+              <div>
+                <label for="password" class="block">Password</label>
+                <input type="password" id="password" name="password" class="w-full border rounded-md py-2 px-3"
+                  required>
+              </div>
+              <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Login</button>
+            </form>
+          </div>
+
+          <div id="registerFormContainer" class="hidden bg-white p-8 rounded-lg shadow-lg mt-8">
+            <div class="flex justify-between mb-8">
+              <h2 class="text-2xl font-bold">Register</h2>
+              <a href="#" id="showLogin" class="text-blue-500">Login</a>
+            </div>
+            <form id="registerForm" class="space-y-4">
+              <div>
+                <label for="newUsername" class="block">Username</label>
+                <input type="text" id="newUsername" name="newUsername" class="w-full border rounded-md py-2 px-3"
+                  required>
+              </div>
+              <div>
+                <label for="newPassword" class="block">Password</label>
+                <input type="password" id="newPassword" name="newPassword" class="w-full border rounded-md py-2 px-3"
+                  required>
+              </div>
+              <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md">Register</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-
-    <script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
+
 </html>

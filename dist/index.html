@@ -1,91 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration and Login Form</title>
-  <link rel="stylesheet" href="./output.css">
+  <title>Responsive Login Form</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
 </head>
+<body class="bg-[#041643]">
+  <div class="relative flex flex-col lg:flex-row items-center justify-center h-screen overflow-hidden">
+    <!-- Image container on the left -->
+    <img src="./alpha.png" alt="Your Image" class="w-full lg:w-auto h-[100vh] lg:h-auto object-cover opacity-10">
 
-<body>
+    <!-- Content -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+      <div class="lg:mb-8 mb-4 flex flex-col lg:justify-center justify-start items-center gap-2">
 
-  <div>
-
-    <div class="relative">
-      <div class="flex lg:block bg-[#041643] h-screen w-full overflow-hidden">
-        <!-- Image container on the left -->
-        <img src="./alpha.png" alt="Your Image" class=" w-[100vw] h-[100-vh] relative bottom-10 opacity-40">
-      </div>
-      <div class="flex flex-col justify-center items-start  gap-40 absolute left-96 top-32">
-        <div class="flex justify-center items-center gap-2">
-              <div class="border-4 border-blue-600 rounded-full w-8 h-8 flex flex-col justify-center items-center">
-                <!-- <img src="./Vector.png" alt=""> -->
-                <div class="bg-blue-600 rounded-full w-5 h-5">
-
-                </div>
-              </div>
-              <div>
-                <p class="text-white font-semibold">CIRCLES</p>
-              </div>
+        <div class="flex lg:justify-center justify-start items-center gap-2">
+          <div class="border-4 border-blue-600 rounded-full w-8 h-8 flex items-center justify-center">
+            <div class="bg-blue-600 rounded-full w-5 h-5"></div>
+          </div>
+          <p class="font-semibold">CIRCLES</p>
         </div>
-        <div class="flex flex-col justify-center items-center gap-5">
-          <p class="text-white text-4xl font-bold w-60">Login into your account</p>
-          <p class="text-gray-400 text-xl">Let us make the circle bigger</p>
+
+        <div class="mt-5 flex flex-col lg:justify-center justify-start items-center">
+          <p class="lg:text-4xl text-xl font-bold">Login into your account</p>
+          <p class="text-gray-400 lg:text-xl text-sm mt-2">Let us make the circle bigger</p>
         </div>
 
       </div>
-      <div class="absolute top-[30%] left-[50%] flex flex-col justify-center items-center ">
 
-        <!-- Right Side LoginForm -->
-        <div class="flex-1 p-4 lg:p-8 max-w-md  mb-10">
-
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <div class="flex justify-between mb-8">
-              <h2 class="text-2xl font-bold">Login</h2>
-              <a href="#" id="showRegister" class="text-blue-500">Register</a>
-            </div>
-            <form id="loginForm" class="space-y-4">
-              <div>
-                <label for="username" class="block">Username</label>
-                <input type="text" id="username" name="username" class="w-full border rounded-md py-2 px-3" required>
-              </div>
-              <div>
-                <label for="password" class="block">Password</label>
-                <input type="password" id="password" name="password" class="w-full border rounded-md py-2 px-3"
-                  required>
-              </div>
-              <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Login</button>
-            </form>
+      <!-- Right Side LoginForm -->
+      <div class="p-4 lg:p-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <div class="flex justify-between mb-8">
+            <h2 class="text-2xl font-bold">Login</h2>
+            <a href="#" id="showRegister" class="text-blue-500">Register</a>
           </div>
-
-          <div id="registerFormContainer" class="hidden bg-white p-8 rounded-lg shadow-lg mt-8">
-            <div class="flex justify-between mb-8">
-              <h2 class="text-2xl font-bold">Register</h2>
-              <a href="#" id="showLogin" class="text-blue-500">Login</a>
+          <form id="loginForm" class="space-y-4">
+            <div>
+              <label for="username" class="block text-black">Username :</label>
+              <input type="text" id="username" name="username" class="w-full border rounded-md py-2 px-3" required>
             </div>
-            <form id="registerForm" class="space-y-4">
-              <div>
-                <label for="newUsername" class="block">Username</label>
-                <input type="text" id="newUsername" name="newUsername" class="w-full border rounded-md py-2 px-3"
-                  required>
-              </div>
-              <div>
-                <label for="newPassword" class="block">Password</label>
-                <input type="password" id="newPassword" name="newPassword" class="w-full border rounded-md py-2 px-3"
-                  required>
-              </div>
-              <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md">Register</button>
-            </form>
-          </div>
+            <div>
+              <label for="password" class="block text-black">Password :</label>
+              <input type="password" id="password" name="password" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Login</button>
+          </form>
         </div>
 
+        <div id="registerFormContainer" class="hidden bg-white lg:p-8 rounded-lg shadow-lg lg:mt-8">
+          <div class="flex justify-between mb-8">
+            <h2 class="text-2xl font-bold">Register</h2>
+            <a href="#" id="showLogin" class="text-blue-500">Login</a>
+          </div>
+          <form id="registerForm" class="space-y-4">
+            <div>
+              <label for="newUsername" class="block">Username</label>
+              <input type="text" id="newUsername" name="newUsername" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <div>
+              <label for="newPassword" class="block">Password</label>
+              <input type="password" id="newPassword" name="newPassword" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md">Register</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script src="./index.js"></script>
 </body>
-
 </html>
